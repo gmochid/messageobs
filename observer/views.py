@@ -9,6 +9,7 @@ class HomePageView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
+        context['is_logged_in'] = self.request.user.is_authenticated()
         return context
 
 class HomeLoginView(TemplateView):
