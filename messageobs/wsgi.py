@@ -1,13 +1,21 @@
-"""
-WSGI config for messageobs project.
+# This file contains the WSGI configuration required to serve up your
+# web application at http://gmochid.pythonanywhere.com/
+# It works by setting the variable 'application' to a WSGI handler of some
+# description.
+#
+# The below has been auto-generated for your Django project
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+import os
+import sys
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
-"""
+# add your project directory to the sys.path
+project_home = u'/home/gmochid'
+if project_home not in sys.path:
+    sys.path.append(project_home)
 
-from django.core.wsgi import get_wsgi_application
-from dj_static import Cling
+# set environment variable to tell django where your settings.py is
+os.environ['DJANGO_SETTINGS_MODULE'] = 'messageobs.settings'
 
-application = Cling(get_wsgi_application())
+# serve django via WSGI
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()
