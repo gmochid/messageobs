@@ -1,4 +1,5 @@
 *.pyc
 .*swp
 messageobs/settings.default.py
+messageobs/wsgi.default.py
 
