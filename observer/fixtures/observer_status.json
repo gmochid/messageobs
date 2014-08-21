@@ -1,0 +1,9 @@
+[
+{
+    "pk": 1, 
+    "model": "observer.status", 
+    "fields": {
+        "detail": "OK"
+    }
+}
+]

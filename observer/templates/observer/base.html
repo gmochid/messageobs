@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}Message Observer{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "lib/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "lib/css/bootstrap-responsive.min.css" %}"/> 
+</head>
+
+<body>
+    <h1>Message Observer</h1>
+    <div id="sidebar">
+        {% block navigator %}{% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <script type="text/javascript" src="{% static "lib/js/bootstrap.min.js" %}"></script>
+</body>
+</html>

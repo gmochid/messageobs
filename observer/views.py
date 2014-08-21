@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
 
-# Create your views here.
+from observer.models import Surat
+
+class HomePageView(ListView):
+    model = Surat
+    
+    def get_context_data(self, **kwargs):
+        context = super(HomePageView, self).get_context_data(**kwargs)
+        return context
+
+class HomeLoginView(TemplateView):
+    template_name = "observer/login.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super(HomeLoginView, self).get_context_data(**kwargs)
+        return context
